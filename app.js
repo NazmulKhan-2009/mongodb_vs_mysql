@@ -108,9 +108,9 @@ app.get('/fruitindemand',(req,res)=>{
 app.get('/',(req,res)=>{
     res.send(`<h3>Welcome to MongoDB VS MySQL ....</h3>`)
    })
-   app.listen(5000,()=>console.log(`Server Ready from ${port}`))
+
+app.listen(port,()=>console.log(`Server Ready from ${port}`))
 
 
 
    
-// https://github.com/LinkedInLearning/Learning-MongoDB-2835008/blob/master/lessons/5.2/2-find_one.js
