@@ -47,7 +47,7 @@ app.post('/fruitsadd', async(req,res)=>{
     try{
        const response=await dbStoreFruits('insert',{...req.body,date:new Date() })
         res.status(200).send(response)    
-        console.log(response)    
+            
      }catch(e){
        console.log(e)
         } ;
@@ -60,7 +60,7 @@ app.get('/fruitlist', async(req,res)=>{
         const dbCon= await connection()
         const collection=await dbCon.collection('fruits')
         const response=await collection.find({}).toArray()
-        console.log(response)
+        res.status(200).send(response)
     
      }catch(e){
        console.log(e)
@@ -106,7 +106,7 @@ app.get('/fruitindemand',(req,res)=>{
 
 
 app.get('/',(req,res)=>{
-    res.send(`<h3>Welcome to MongoDB VS MySQL ....</h3>`)
+    res.status(200).send('Welcome to MongoDB VS MySQL')
    })
 
 app.listen(port,()=>console.log(`Server Ready from ${port}`))
